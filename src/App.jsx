@@ -1,5 +1,6 @@
 
 import './App.css'
+import Click from './eventhandler'
 
 function App() {
   const persons=[
@@ -10,6 +11,18 @@ function App() {
     {id:'5', name:'Khan', lang:'Golang', isDone:false, duration:'90days',left:'10days'},
     {id:'6', name:'Fahmid', lang:'Golang', isDone:true, duration:'90days',left:'10days'}
   ]
+
+  const Click3 = () => {
+    alert('click 3')
+  }
+  let ClickAdd = (num) =>{
+    const addNum = num + 10;
+    return alert(addNum);
+  }
+  let ClickMinus = (num) =>{
+    const minusNum = num - 10;
+    return alert(minusNum);
+  }
 
   return (
     <>
@@ -35,6 +48,13 @@ function App() {
     {
       persons.map(person => <OnlyPending key={person.id} pending={person}></OnlyPending>)
     }
+    <button className='btn' onClick={Click}>Click Me</button>
+    <button className='btn' onClick={function Click2(){
+      alert('click 2');
+    }}>Click Me 2</button>
+    <button className='btn' onClick={Click3}>Click 3</button>
+    <button className='btn' onClick={() => ClickAdd(25)}>Sum</button>
+    <button className='btn' onClick={() => ClickMinus(75)}>Minus</button>
     </>
   )
 }

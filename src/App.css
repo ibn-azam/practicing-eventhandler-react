@@ -16,3 +16,22 @@
   padding: 20px;
   margin: 20px 0;
 }
+
+.btn{
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  width: 100px;
+  cursor: pointer;
+  margin: 10px 0;
+  background-color: aliceblue;
+  color: black;
+}
+.btn:hover{
+  background-color: black;
+  color: white;
+}
+.btn:active{
+  background-color:blue;
+  color: rgb(84, 125, 2);
+}
