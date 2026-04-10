@@ -7,8 +7,8 @@ function App() {
     {id:'2', name:'Joynal', lang:'TypeScript', isDone:true, duration:'90days',left:'10days' },
     {id:'3', name:'Motin', lang:'NodeJS', isDone:false, duration:'90days',left:'10days'},
     {id:'4', name:'Fahad', lang:'Golang', isDone:true, duration:'90days',left:'10days'},
-    {id:'4', name:'Khan', lang:'Golang', isDone:false, duration:'90days',left:'10days'},
-    {id:'4', name:'Fahmid', lang:'Golang', isDone:true, duration:'90days',left:'10days'}
+    {id:'5', name:'Khan', lang:'Golang', isDone:false, duration:'90days',left:'10days'},
+    {id:'6', name:'Fahmid', lang:'Golang', isDone:true, duration:'90days',left:'10days'}
   ]
 
   return (
@@ -21,14 +21,25 @@ function App() {
       }}>Completeing Learning Programming Languages</h2>
 
     {
-      persons.map(person => <ToDo person={person}></ToDo>)
+      persons.map(person => <ToDo key={person.id} person={person}></ToDo>)
+    }
+    {
+      persons.map(person => <Member key={person.id} member={person}></Member>)
+    }
+    {
+      persons.map(person => <Only key={person.id} person={person}></Only>)
+    }
+    {
+      persons.map(person => <OnlyDone key={person.id} done={person}></OnlyDone>)
+    }
+    {
+      persons.map(person => <OnlyPending key={person.id} pending={person}></OnlyPending>)
     }
     </>
   )
 }
 
 function ToDo({person}){
-  console.log(person)
   if(person.isDone === true){
     return(
       <div className='done'>
@@ -48,6 +59,33 @@ function ToDo({person}){
       </div>
     )
   }
+}
+
+function Member({member}){
+  if(member.isDone === true){
+    return(
+      <div className='done'>
+      <h2>Name : {member.name}</h2>
+      <p>Expert : {member.lang}</p>
+    </div>
+    )
+  }return(
+    <div className='pending'>
+      <h2>Member Not Found</h2>
+    </div>
+  )
+}
+
+function Only({person}){
+  return person.isDone ? <h2 className='done'>Name : {person.name} || Expert : {person.lang}</h2> : <h2 className='pending'>Person Not Found</h2>
+}
+
+function OnlyDone({done}){
+ return done.isDone &&  <h2 className='done'>Name : {done.name} || Expert : {done.lang}</h2>
+}
+
+function OnlyPending({pending}){
+  return pending.isDone ||   <h2 className='pending'>Person Not Found</h2>
 }
 
 export default App
