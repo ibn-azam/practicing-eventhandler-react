@@ -1,6 +1,9 @@
 
 import './App.css'
 import Click from './eventhandler'
+import Counter from './counter'
+import Batsman from './batsman'
+import Bowler from './bowler'
 
 function App() {
   const persons=[
@@ -32,7 +35,9 @@ function App() {
         fontWeight:'bold',
         margin:'20px 0'
       }}>Completeing Learning Programming Languages</h2>
-
+    <Bowler></Bowler>
+    <Batsman></Batsman>
+    <Counter></Counter>
     {
       persons.map(person => <ToDo key={person.id} person={person}></ToDo>)
     }

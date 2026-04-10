@@ -35,3 +35,23 @@
   background-color:blue;
   color: rgb(84, 125, 2);
 }
+
+.batsman{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid goldenrod;
+  border-radius: 10px;
+  text-align: left;
+  padding: 20px;
+  margin: 20px 0;
+}
+.bowler{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid green;
+  border-radius: 10px;
+  text-align: left;
+  padding: 20px;
+}
